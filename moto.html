@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kawasaki Z1000 Interactiva</title>
+  <style>
+    body {
+      background-color: #0b0b0b;
+      color: #d8d8d8;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #00ff00;
+      text-shadow: 0 0 10px #00ff0080;
+      margin-top: 25px;
+      letter-spacing: 2px;
+    }
+
+    #seccion {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .barra {
+      position: relative;
+      width: 900px;
+      height: 500px;
+      background: url("https://i.pinimg.com/1200x/97/e3/fa/97e3faeea7aa294e1d846c9cb436fc6d.jpg") no-repeat center;
+      background-size: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
+      border: 2px solid #00ff00;
+    }
+
+    .text-hotspot {
+      color: white;
+      font-weight: bold;
+      position: absolute;
+      top: 8px;
+      left: 13px;
+      font-size: 16px;
+      pointer-events: none;
+    }
+
+    #hotspot1, #hotspot2, #hotspot3, #hotspot4, #hotspot5, #hotspot6 {
+      position: absolute;
+      width: 42px;
+      height: 42px;
+      background-color: #00ff0085;
+      border: 2px solid #00ff00;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    #hotspot1:hover, #hotspot2:hover, #hotspot3:hover, 
+    #hotspot4:hover, #hotspot5:hover, #hotspot6:hover {
+      transform: scale(1.25);
+      box-shadow: 0 0 20px #00ff00;
+      background-color: #00ff00cc;
+    }
+
+    #hotspot1 { top: 320px; left: 480px; }  
+    #hotspot2 { top: 350px; left: 170px; } 
+    #hotspot3 { top: 220px; left: 700px; }  
+    #hotspot4 { top: 200px; left: 520px; }  
+    #hotspot5 { top: 150px; left: 700px; }  
+    #hotspot6 { top: 130px; left: 650px; }  
+
+    #info {
+      width: 350px;
+      background: linear-gradient(180deg, #1a1a1a, #101010);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+      border: 1px solid #00ff00;
+    }
+
+    #info img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+      border: 1px solid #00ff00;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #00ff00;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      padding: 10px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 0 10px #00ff0075;
+    }
+
+    button:hover {
+      background-color: #00cc00;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Kawasaki Z1000 Interactiva</h1>
+
+  <div id="seccion">
+    <div class="barra" id="imagen-interactiva">
+      <div id="hotspot1"><span class="text-hotspot">1</span></div>
+      <div id="hotspot2"><span class="text-hotspot">2</span></div>
+      <div id="hotspot3"><span class="text-hotspot">3</span></div>
+      <div id="hotspot4"><span class="text-hotspot">4</span></div>
+      <div id="hotspot5"><span class="text-hotspot">5</span></div>
+      <div id="hotspot6"><span class="text-hotspot">6</span></div>
+    </div>
+
+    <div id="info">
+      <h2 id="titulo-info">Haz clic en un punto 🟢</h2>
+      <p id="texto-info">Selecciona un número sobre la moto para ver la información detallada de cada parte.</p>
+      <img id="imagen-info" src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/17ZR1000J_40RBK3DRS00D_C.png" alt="Información">
+      <button id="regresar">Regresar</button>
+      <button id="btnQuiz">Prueba de Conocimiento</button>
+    </div>
+  </div>
+
+  <script>
+   
+    document.getElementById('hotspot1').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Motor';
+      document.getElementById('texto-info').textContent =
+        'La Kawasaki Z1000 cuenta con un motor de 4 cilindros en línea de 1,043 cc, con 142 caballos de fuerza y un sonido inconfundible. Su aceleración inmediata y lineal entrega una experiencia brutal en carretera.';
+      document.getElementById('imagen-info').setAttribute('src', "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFKXGiDGi7jb5WrW5m8lCYm1HxasUPOgeXiw&s");
+    };
+
+    document.getElementById('hotspot2').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Frenos';
+      document.getElementById('texto-info').textContent =
+        'Equipada con frenos Brembo monobloque de 310 mm y ABS inteligente KIBS, la Z1000 ofrece un control de frenado preciso, incluso en curvas o condiciones extremas.';
+      document.getElementById('imagen-info').setAttribute('src', "https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/17ZR1000J_40RBK3FSAB00D_C_002.jpg");
+    };
+
+    document.getElementById('hotspot3').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Sistema Electrónico';
+      document.getElementById('texto-info').textContent =
+        'Incorpora control de tracción KTRC, modos de potencia y gestión electrónica del acelerador para una respuesta precisa. Su IMU analiza constantemente la inclinación y el frenado.';
+      document.getElementById('imagen-info').setAttribute('src', "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8R9oJ-iWt9kSdfXq7lk2DeYcT1MqWvKZ0CA&s");
+    };
+
+    document.getElementById('hotspot4').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Chasis';
+      document.getElementById('texto-info').textContent =
+        'El chasis de aluminio tipo twin-tube ofrece un balance perfecto entre rigidez y flexibilidad. Junto con el basculante reforzado, aporta estabilidad y una conducción precisa.';
+      document.getElementById('imagen-info').setAttribute('src', "https://blog.comprotumoto.com/wp-content/uploads/2020/11/12_kawasaki-z-1000-lateral-chasis.474082.jpg");
+    };
+
+    document.getElementById('hotspot5').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Diseño Sugomi';
+      document.getElementById('texto-info').textContent =
+        'La estética “Sugomi” representa la esencia de la Z1000: agresiva, poderosa y minimalista. Cada línea del carenado está diseñada para transmitir velocidad incluso en reposo.';
+      document.getElementById('imagen-info').setAttribute('src', "https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/th_16ZR1000G_40AREDDRS3CG_C.jpg");
+    };
+
+    document.getElementById('hotspot6').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Asistencia al Piloto';
+      document.getElementById('texto-info').textContent =
+        'Dispone de control de tracción, embrague asistido antirrebote y modos de conducción. Todo orientado a ofrecer seguridad sin comprometer la emoción pura de pilotar.';
+      document.getElementById('imagen-info').setAttribute('src', "https://cdn-fastly.motorcycle.com/media/2023/02/22/8775349/2014-kawasaki-z1000-abs-first-ride.jpg?size=720x845&nocrop=1");
+    };
+
+    
+    document.getElementById('regresar').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Haz clic en un punto 🟢';
+      document.getElementById('texto-info').textContent =
+        'Selecciona un número sobre la moto para ver la información detallada de cada parte.';
+      document.getElementById('imagen-info').setAttribute('src', "https://i.pinimg.com/1200x/97/e3/fa/97e3faeea7aa294e1d846c9cb436fc6d.jpg");
+    };
+
+    
+    document.getElementById("btnQuiz").addEventListener("click", () => {
+      const preguntas = [
+        { q: "¿Qué tipo de moto es la Kawasaki Z1000?", a: "naked" },
+        { q: "¿Cuántos cilindros tiene el motor?", a: "4" },
+        { q: "¿Cuál es la cilindrada del motor (en cc)?", a: "1043" },
+        { q: "¿Qué sistema de frenos incluye?", a: "abs" },
+        { q: "¿Qué peso aproximado tiene (en kg)?", a: "221" },
+        { q: "¿Qué velocidad máxima alcanza (en km/h)?", a: "250" },
+        { q: "¿Qué suspensión delantera usa?", a: "invertida" },
+        { q: "¿Cuántas marchas tiene?", a: "6" },
+        { q: "¿Qué tipo de tracción tiene?", a: "trasera" },
+        { q: "¿Qué marca fabrica la moto?", a: "kawasaki" }
+      ];
+
+      let c = 0;
+      for (let i = 0; i < preguntas.length; i++) {
+        let r = prompt(`${i + 1}. ${preguntas[i].q}`);
+        if (r && r.trim().toLowerCase().includes(preguntas[i].a)) c++;
+      }
+      alert(`Tu calificación: ${c}/10`);
+    });
+  </script>
+</body>
+</html>
