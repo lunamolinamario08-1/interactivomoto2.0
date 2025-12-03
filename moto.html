@@ -43,16 +43,6 @@
       box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
       border: 2px solid #00ff00;
     }
-     #resultado {
-      display:flex;
-      flex-direction:column;
-      flex-wrap:wrap;
-      align-items: center;
-
-      .texto-rojo{
-            font-size:40px;
-            font-weight: bold;
-            color:red;
 
     .text-hotspot {
       color: white;
@@ -64,6 +54,7 @@
       pointer-events: none;
     }
 
+    /* Estilos de los hotspots */
     #hotspot1, #hotspot2, #hotspot3, #hotspot4, #hotspot5, #hotspot6 {
       position: absolute;
       width: 42px;
@@ -75,6 +66,7 @@
       transition: all 0.25s ease;
     }
 
+    /* Efecto al pasar el mouse */
     #hotspot1:hover, #hotspot2:hover, #hotspot3:hover, 
     #hotspot4:hover, #hotspot5:hover, #hotspot6:hover {
       transform: scale(1.25);
@@ -82,6 +74,7 @@
       background-color: #00ff00cc;
     }
 
+    /* Posicionamiento de los hotspots sobre la moto */
     #hotspot1 { top: 320px; left: 480px; }  
     #hotspot2 { top: 350px; left: 170px; } 
     #hotspot3 { top: 220px; left: 700px; }  
@@ -122,6 +115,36 @@
       background-color: #00cc00;
       transform: scale(1.05);
     }
+
+    #resultado {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    #resultado h2 {
+      color: #00ff00;
+      font-size: 24px;
+    }
+
+    #calif {
+      font-size: 40px;
+      font-weight: bold;
+      color: red;
+    }
+
+    .boton-formulario {
+      margin-top: 20px;
+      color: #00ff00;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .boton-formulario:hover {
+      color: #00cc00;
+    }
   </style>
 </head>
 <body>
@@ -146,15 +169,15 @@
     </div>
   </div>
 
-  <div id="resultado" class="invisible">
-        <h2>Tu resultado:</h2>
-        <span id="calif" class="texto-rojo">0/0</span>
-        <img id="imagen-resultado" width="200px" src="Img/Gif.gif" />
-        <a href="formulario.html" class="boton-formulario">Libro de visitas</a>
-      </div>    
+  <div id="resultado">
+    <h2>Tu resultado:</h2>
+    <span id="calif">0/0</span>
+    <img id="imagen-resultado" width="200px" src="https://media.giphy.com/media/3o7btXQrl00mpKfqlS/giphy.gif" />
+    <a href="formulario.html" class="boton-formulario">Libro de visitas</a>
+  </div>
 
   <script>
-   
+    // Funciones para los hotspots
     document.getElementById('hotspot1').onclick = function() {
       document.getElementById('titulo-info').textContent = 'Motor';
       document.getElementById('texto-info').textContent =
@@ -169,43 +192,7 @@
       document.getElementById('imagen-info').setAttribute('src', "https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/17ZR1000J_40RBK3FSAB00D_C_002.jpg");
     };
 
-    document.getElementById('hotspot3').onclick = function() {
-      document.getElementById('titulo-info').textContent = 'Sistema Electrónico';
-      document.getElementById('texto-info').textContent =
-        'Incorpora control de tracción KTRC, modos de potencia y gestión electrónica del acelerador para una respuesta precisa. Su IMU analiza constantemente la inclinación y el frenado.';
-      document.getElementById('imagen-info').setAttribute('src', "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8R9oJ-iWt9kSdfXq7lk2DeYcT1MqWvKZ0CA&s");
-    };
-
-    document.getElementById('hotspot4').onclick = function() {
-      document.getElementById('titulo-info').textContent = 'Chasis';
-      document.getElementById('texto-info').textContent =
-        'El chasis de aluminio tipo twin-tube ofrece un balance perfecto entre rigidez y flexibilidad. Junto con el basculante reforzado, aporta estabilidad y una conducción precisa.';
-      document.getElementById('imagen-info').setAttribute('src', "https://blog.comprotumoto.com/wp-content/uploads/2020/11/12_kawasaki-z-1000-lateral-chasis.474082.jpg");
-    };
-
-    document.getElementById('hotspot5').onclick = function() {
-      document.getElementById('titulo-info').textContent = 'Diseño Sugomi';
-      document.getElementById('texto-info').textContent =
-        'La estética “Sugomi” representa la esencia de la Z1000: agresiva, poderosa y minimalista. Cada línea del carenado está diseñada para transmitir velocidad incluso en reposo.';
-      document.getElementById('imagen-info').setAttribute('src', "https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/th_16ZR1000G_40AREDDRS3CG_C.jpg");
-    };
-
-    document.getElementById('hotspot6').onclick = function() {
-      document.getElementById('titulo-info').textContent = 'Asistencia al Piloto';
-      document.getElementById('texto-info').textContent =
-        'Dispone de control de tracción, embrague asistido antirrebote y modos de conducción. Todo orientado a ofrecer seguridad sin comprometer la emoción pura de pilotar.';
-      document.getElementById('imagen-info').setAttribute('src', "https://cdn-fastly.motorcycle.com/media/2023/02/22/8775349/2014-kawasaki-z1000-abs-first-ride.jpg?size=720x845&nocrop=1");
-    };
-
-    
-    document.getElementById('regresar').onclick = function() {
-      document.getElementById('titulo-info').textContent = 'Haz clic en un punto 🟢';
-      document.getElementById('texto-info').textContent =
-        'Selecciona un número sobre la moto para ver la información detallada de cada parte.';
-      document.getElementById('imagen-info').setAttribute('src', "https://i.pinimg.com/1200x/97/e3/fa/97e3faeea7aa294e1d846c9cb436fc6d.jpg");
-    };
-
-    
+    // Implementación de la prueba de conocimiento
     document.getElementById("btnQuiz").addEventListener("click", () => {
       const preguntas = [
         { q: "¿Qué tipo de moto es la Kawasaki Z1000?", a: "naked" },
@@ -226,6 +213,8 @@
         if (r && r.trim().toLowerCase().includes(preguntas[i].a)) c++;
       }
       alert(`Tu calificación: ${c}/10`);
+      document.getElementById('resultado').style.display = 'flex';
+      document.getElementById('calif').textContent = `${c}/10`;
     });
   </script>
 </body>
