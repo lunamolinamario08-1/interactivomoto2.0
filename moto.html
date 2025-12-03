@@ -43,6 +43,16 @@
       box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
       border: 2px solid #00ff00;
     }
+     #resultado {
+      display:flex;
+      flex-direction:column;
+      flex-wrap:wrap;
+      align-items: center;
+
+      .texto-rojo{
+            font-size:40px;
+            font-weight: bold;
+            color:red;
 
     .text-hotspot {
       color: white;
@@ -135,6 +145,13 @@
       <button id="btnQuiz">Prueba de Conocimiento</button>
     </div>
   </div>
+
+  <div id="resultado" class="invisible">
+        <h2>Tu resultado:</h2>
+        <span id="calif" class="texto-rojo">0/0</span>
+        <img id="imagen-resultado" width="200px" src="Img/Gif.gif" />
+        <a href="formulario.html" class="boton-formulario">Libro de visitas</a>
+      </div>    
 
   <script>
    
