@@ -177,7 +177,7 @@
   </div>
 
   <script>
-    // Funciones para los hotspots
+    
     document.getElementById('hotspot1').onclick = function() {
       document.getElementById('titulo-info').textContent = 'Motor';
       document.getElementById('texto-info').textContent =
@@ -191,8 +191,35 @@
         'Equipada con frenos Brembo monobloque de 310 mm y ABS inteligente KIBS, la Z1000 ofrece un control de frenado preciso, incluso en curvas o condiciones extremas.';
       document.getElementById('imagen-info').setAttribute('src', "https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/17ZR1000J_40RBK3FSAB00D_C_002.jpg");
     };
+    document.getElementById('hotspot3').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Sistema Electrónico';
+      document.getElementById('texto-info').textContent =
+        'Incorpora control de tracción KTRC, modos de potencia y gestión electrónica del acelerador para una respuesta precisa. Su IMU analiza constantemente la inclinación y el frenado.';
+      document.getElementById('imagen-info').setAttribute('src', "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8R9oJ-iWt9kSdfXq7lk2DeYcT1MqWvKZ0CA&s");
+    };
 
-    // Implementación de la prueba de conocimiento
+    document.getElementById('hotspot4').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Chasis';
+      document.getElementById('texto-info').textContent =
+        'El chasis de aluminio tipo twin-tube ofrece un balance perfecto entre rigidez y flexibilidad. Junto con el basculante reforzado, aporta estabilidad y una conducción precisa.';
+      document.getElementById('imagen-info').setAttribute('src', "https://blog.comprotumoto.com/wp-content/uploads/2020/11/12_kawasaki-z-1000-lateral-chasis.474082.jpg");
+    };
+
+    document.getElementById('hotspot5').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Diseño Sugomi';
+      document.getElementById('texto-info').textContent =
+        'La estética “Sugomi” representa la esencia de la Z1000: agresiva, poderosa y minimalista. Cada línea del carenado está diseñada para transmitir velocidad incluso en reposo.';
+      document.getElementById('imagen-info').setAttribute('src', "https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/th_16ZR1000G_40AREDDRS3CG_C.jpg");
+    };
+
+    document.getElementById('hotspot6').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Asistencia al Piloto';
+      document.getElementById('texto-info').textContent =
+        'Dispone de control de tracción, embrague asistido antirrebote y modos de conducción. Todo orientado a ofrecer seguridad sin comprometer la emoción pura de pilotar.';
+      document.getElementById('imagen-info').setAttribute('src', "https://cdn-fastly.motorcycle.com/media/2023/02/22/8775349/2014-kawasaki-z1000-abs-first-ride.jpg?size=720x845&nocrop=1");
+    };
+
+    
     document.getElementById("btnQuiz").addEventListener("click", () => {
       const preguntas = [
         { q: "¿Qué tipo de moto es la Kawasaki Z1000?", a: "naked" },
