@@ -14,7 +14,7 @@
                 echo "error de depuración: " . mysqli_connect_error();
                 exit;
             }
-            $sql="INSERT INTO Visitantes(Nombre,Comentario)VALUES('$nombre_post','$comentario_post')";
+            $sql="INSERT INTO visitantes(Nombre,comentario)VALUES('$nombre_post','$comentario_post')";
             if(mysqli_query($conexion,$sql)){
                 echo"Registro insertado exitosamente";
             }else{

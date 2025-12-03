@@ -76,7 +76,7 @@
 
     }
 
-    $resultado = mysqli_query($conexion, "SELECT ID, Nombre, Comentario FROM Visitantes");
+    $resultado = mysqli_query($conexion, "SELECT id, Nombre, comentario FROM Visitantes");
 
     ?>
 
