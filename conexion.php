@@ -5,7 +5,7 @@
     </head>
     <body>
         <?php
-            $conexion= mysqli_connect("sql302.infinityfree.com","if0_40475211","WEimgDsvW1Wq","if0_40475211_interactivo");
+            $conexion= mysqli_connect("sql100.infinityfree.com","if0_40591127","Molina150208","if0_40591127_interactivo");
             if(!$conexion){
                 echo "Error:no se pudo conectar a MySQL";
                 echo "errno de depuración: " . mysqli_connect_errno();
